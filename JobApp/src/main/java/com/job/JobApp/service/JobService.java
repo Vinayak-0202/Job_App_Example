@@ -1,0 +1,26 @@
+package com.job.JobApp.service;
+
+import com.job.JobApp.model.JobPost;
+import com.job.JobApp.repo.JobRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class JobService {
+
+    @Autowired
+    private JobRepo repo;
+
+    public void addJob(JobPost job){
+        System.out.println("Inside service addJob");
+        repo.addJob(job);
+    }
+
+    public List<JobPost> getAllJobs(){
+        System.out.println("Inside service getAllJobs");
+        return repo.getAllJobs();
+    }
+}
